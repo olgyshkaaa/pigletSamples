@@ -1,4 +1,4 @@
-student = LOAD 'C://Spark//Students.txt' USING PigStorage(',')
+edge= LOAD 'C://Spark//Students.txt' USING PigStorage(',')
    as (start:int, end:int);
 edge_group_end = GROUP edge BY end;
 result_end = FOREACH edge_group_end GENERATE edge.end, COUNT(edge.start);
